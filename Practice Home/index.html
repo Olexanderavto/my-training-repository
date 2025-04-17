@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+    <meta name="theme-color" content="#5e3f1f">
+  <title>Військовий документ</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'system-ui', sans-serif;
+      background-color: #ece6d8;
+      color: #000;
+    }
+
+    .wrapper {
+      max-width: 420px;
+      margin: auto;
+      padding: 16px;
+    }
+
+    .card {
+      background-color: #e0dac7;
+      border: 1px solid #a89f8f;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0 0 16px 0;
+    }
+
+    .info {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .label {
+      color: #555;
+    }
+
+    .name {
+      font-weight: bold;
+      font-size: 18px;
+      margin-top: 16px;
+    }
+
+    .marquee-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #5e3f1f;
+      color: #fff;
+      padding: 6px 0;
+      font-size: 14px;
+      overflow: hidden;
+    }
+
+    .marquee-text {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scroll-left 8s linear infinite;
+      padding-left: 100%;
+    }
+
+    @keyframes scroll-left {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <div class="title">Військово-обліковий документ</div>
+      <div class="info"><span class="label">Дата народження:</span> 12.01.1987</div>
+      <div class="info"><span class="label">Відстрочка до:</span> 08.05.2025</div>
+      <div class="name">Осадчий Олександр Сергійович</div>
+
+      <div class="marquee-bar">
+        <div class="marquee-text">Документ оновлено о 11:03 | 02.04.2025</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+</html>
